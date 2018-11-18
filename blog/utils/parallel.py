@@ -5,8 +5,6 @@ from .client2 import *
 from .client3 import *
 
 
-
-
 def fun_call1():
     print('Client 1 call')
     data_1 = Server1()
