@@ -17,7 +17,7 @@ def Server1():
     x = ast.literal_eval(data)
     print(x)
     s.close()
-    return data
+    return x
 
 
 if __name__ == '__main__':
