@@ -28,18 +28,18 @@ def fun_call3():
     return data_3
 
 
-def Main():
-    p1 = Process(target=fun_call1())
-    p2 = Process(target=fun_call2())
-    p3 = Process(target=fun_call3())
-    p1.start()
-    p2.start()
-    p3.start()
-    p1.join()
-    p2.join()
-    p3.join()
+# def Main():
+#     p1 = Process(target=fun_call1())
+#     p2 = Process(target=fun_call2())
+#     p3 = Process(target=fun_call3())
+#     p1.start()
+#     p2.start()
+#     p3.start()
+#     p1.join()
+#     p2.join()
+#     p3.join()
     # manager = multiprocessing.Manager()
 
 
-if __name__ == '__main__':
-    Main
+# if __name__ == '__main__':
+#     Main

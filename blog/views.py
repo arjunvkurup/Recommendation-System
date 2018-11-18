@@ -4,25 +4,25 @@ from geopy.geocoders import GoogleV3
 from .utils import parallel
 
 
-# from multiprocessing import Process
-# from ..utils.client1 import *
-# from ..utils.client2 import *
-# from ..utils.client3 import *
-
-
-
-
 # Create your views here.
 def index(request):
     template = loader.get_template('blog/index.html')
 
+    # def cal_1():
     LongLatCount1 = parallel.fun_call1()
+
+
+    # def cal_2():
     LongLatCount2 = parallel.fun_call2()
+
+
+    # def cal_3():
     LongLatCount3 = parallel.fun_call3()
 
-    # p1 = Process(target=fun_call1())
-    # p2 = Process(target=fun_call2())
-    # p3 = Process(target=fun_call3())
+
+    # p1 = Process(target=cal_1())
+    # p2 = Process(target=cal_2())
+    # p3 = Process(target=cal_3())
     # p1.start()
     # p2.start()
     # p3.start()
@@ -32,9 +32,6 @@ def index(request):
 
 
 
-    # LongLatCount1 =
-    # LongLatCount2 = parallel.data_2
-    # LongLatCount3 = parallel.data_3
     # LongLatCount1 = [
     #     [[-159.38, 22.08], 74],
     #     [[-157.83, 21.31], 807],
