@@ -24,7 +24,7 @@ SECRET_KEY = '8&o_g!zs!@ld%qq)(1=e++2oup60@l$7-t+en))s$l$j!7+o7='
 
 # SECURITY WARNING: don't run with debuipconfig
 # g turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.0.107',
