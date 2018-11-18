@@ -13,7 +13,7 @@ def Server2():
     s.send(message.encode())
     data = s.recv(1024).decode('utf-8')
     print(type(data))
-    print('Received from Server ' + str(data))
+    print('Received from Server ' + str(data[0]))
     s.close()
     return data
 
