@@ -1,8 +1,9 @@
-import sys
 from django.shortcuts import render
-from django.template import loader, Context
+from django.template import loader
 from geopy.geocoders import GoogleV3
-from ..utils.parallel import *
+from .utils import parallel
+
+
 # from multiprocessing import Process
 # from ..utils.client1 import *
 # from ..utils.client2 import *
@@ -15,11 +16,13 @@ from ..utils.parallel import *
 def index(request):
     template = loader.get_template('blog/index.html')
 
-    fun_call1()
-    fun_call2()
-    fun_call3()
+    parallel.fun_call1()
+    parallel.fun_call2()
+    parallel.fun_call3()
     # data_1
     # data_2
+
+
     # data_3
     #
     # def fun_call1():
