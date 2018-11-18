@@ -1,11 +1,14 @@
+import sys
 from django.shortcuts import render
 from django.template import loader, Context
 from geopy.geocoders import GoogleV3
+from ..utils.parallel import *
+from multiprocessing import Process
+sys.path.append("..")
 # from ..utils.client1 import *
 # from ..utils.client2 import *
 # from ..utils.client3 import *
-from ..utils.parallel import *
-from multiprocessing import Process
+
 
 
 
