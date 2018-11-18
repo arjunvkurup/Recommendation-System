@@ -13,7 +13,7 @@ def index(request):
     template = loader.get_template('blog/index.html')
 
 
-''' Test Area  '''
+    ''' Test Area  '''
 
     # LongLatCount1[][]
     # LongLatCount2[][]
