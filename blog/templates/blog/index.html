@@ -1,0 +1,254 @@
+<html>
+  <head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', { 'packages': ['map'], mapsApiKey:"AIzaSyA2OkaAMXQ7o0kXBpTI2LQMDCV0UKGV0Z0" });
+    google.charts.load('current', { 'packages': ['corechart'], mapsApiKey:"AIzaSyA2OkaAMXQ7o0kXBpTI2LQMDCV0UKGV0Z0" });
+    google.charts.setOnLoadCallback(drawMap);
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
+    google.charts.setOnLoadCallback(drawChart3);
+    function drawMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Lat', 'Long', 'Name', 'Marker']
+    {% for l in Site1 %}
+    {% if LongLat1.0.1 == l.0.1 and LongLat1.0.0 == l.0.0 %}
+    {% if best.0.1 == l.0.1 and best.0.0 == l.0.0 %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 1', 'green']
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 1', 'pink']
+    {% endif %}
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Data1', 'blue']
+    {% endif %}
+    {% endfor %}
+    {% for l in Site2 %}
+    {% if LongLat2.0.1 == l.0.1 and LongLat2.0.0 == l.0.0 %}
+    {% if best.0.1 == l.0.1 and best.0.0 == l.0.0 %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 2', 'green']
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 2', 'pink']
+    {% endif %}
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Data2', 'blue']
+    {% endif %}
+    {% endfor %}
+    {% for l in Site3 %}
+    {% if LongLat3.0.1 == l.0.1 and LongLat3.0.0 == l.0.0 %}
+    {% if best.0.1 == l.0.1 and best.0.0 == l.0.0 %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 3', 'green']
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Site 3', 'pink']
+    {% endif %}
+    {% else %}
+    ,[{{ l.0.1 }},{{ l.0.0 }},'Data3', 'blue']
+    {% endif %}
+    {% endfor %}
+  ]);
+    var url = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/';
+    var options = {
+      showTooltip: true,
+      showInfoWindow: true,
+      useMapTypeControl: true,
+      icons:{
+      blue:{
+            normal:   url + 'Map-Marker-Ball-Azure-icon.png',
+            selected: url + 'Map-Marker-Ball-Right-Azure-icon.png'
+          },
+          green:{
+            normal:   url + 'Map-Marker-Push-Pin-1-Chartreuse-icon.png',
+            selected: url + 'Map-Marker-Push-Pin-1-Right-Chartreuse-icon.png'
+          },
+          pink:{
+            normal:   url + 'Map-Marker-Ball-Pink-icon.png',
+            selected: url + 'Map-Marker-Ball-Right-Pink-icon.png'
+          }
+        }
+    };
+    var map = new google.visualization.Map(document.getElementById('map_view'));
+        map.draw(data, options);
+    };
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+      ['Name', 'Density']
+    ,['Site 1',{{ LongLat1.1 }}]
+    ,['Site 2',{{ LongLat2.1}}]
+    ,['Site 3',{{ LongLat3.1 }}]
+  ]);
+        var options = {
+          title: 'Customer Density'
+        };
+
+    var chart = new google.visualization.PieChart(document.getElementById('analysis1'));
+    chart.draw(data, options);
+
+    };
+    function drawChart1() {
+        var data = google.visualization.arrayToDataTable([
+      ['Name', 'Density']
+    ,['Data 1',{{ Site2.0.1 }}]
+    ,['Data 2',{{ Site2.1.1}}]
+    ,['Data 3',{{ Site2.2.1 }}]
+    ,['Data 4',{{ Site2.3.1 }}]
+    ,['Data 5',{{ Site2.4.1}}]
+    ,['Data 6',{{ Site2.5.1 }}]
+    ,['Data 7',{{ Site2.6.1 }}]
+    ,['Data 8',{{ Site2.7.1}}]
+    ,['Data 9',{{ Site2.8.1 }}]
+    ,['Data 10',{{ Site2.9.1 }}]
+  ]);
+        var options = {
+          title: 'Site 1 Density'
+        };
+
+    var chart = new google.visualization.PieChart(document.getElementById('analysis3'));
+    chart.draw(data, options);
+
+    };
+    function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+      ['Name', 'Density']
+    ,['Data 1',{{ Site1.0.1 }}]
+    ,['Data 2',{{ Site1.1.1}}]
+    ,['Data 3',{{ Site1.2.1 }}]
+    ,['Data 4',{{ Site1.3.1 }}]
+    ,['Data 5',{{ Site1.4.1}}]
+    ,['Data 6',{{ Site1.5.1 }}]
+    ,['Data 7',{{ Site1.6.1 }}]
+    ,['Data 8',{{ Site1.7.1}}]
+    ,['Data 9',{{ Site1.8.1 }}]
+    ,['Data 10',{{ Site1.9.1 }}]
+  ]);
+        var options = {
+          title: 'Site 2 Density'
+        };
+
+    var chart = new google.visualization.PieChart(document.getElementById('analysis2'));
+    chart.draw(data, options);
+
+    };
+    function drawChart3() {
+        var data = google.visualization.arrayToDataTable([
+      ['Name', 'Density']
+    ,['Data 1',{{ Site3.0.1 }}]
+    ,['Data 2',{{ Site3.1.1}}]
+    ,['Data 3',{{ Site3.2.1 }}]
+    ,['Data 4',{{ Site3.3.1 }}]
+    ,['Data 5',{{ Site3.4.1}}]
+    ,['Data 6',{{ Site3.5.1 }}]
+    ,['Data 7',{{ Site3.6.1 }}]
+    ,['Data 8',{{ Site3.7.1}}]
+    ,['Data 9',{{ Site3.8.1 }}]
+    ,['Data 10',{{ Site3.9.1 }}]
+  ]);
+        var options = {
+          title: 'Site 3 Density'
+        };
+
+    var chart = new google.visualization.PieChart(document.getElementById('analysis4'));
+    chart.draw(data, options);
+
+    };
+  </script>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.piechart {
+  width:100%;
+  height:25%;
+}
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    height: 20%;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+    width: 20%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 60%;
+    height: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+</style>
+  </head>
+  <body>
+  <div class="header">
+    <h1>Recommendation System</h1>
+    <p>Suggested Locations.</p>
+  </div>
+
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="#">About</a>
+  </div>
+
+  <div class="row">
+    <div class="column side" id="side">
+      <div style="background:pink;font-size:0.8em;">All Possible location are
+        <ul><li>{{ best_l1 }}</li><li>{{ best_l2}} </li><li> {{ best_l2 }}</li></ul></div>
+      <div style="background:green;font-size:0.8em;">Best location is {{ best_l }}</div>
+    </div>
+    <div class="column middle" id="map_view"></div>
+    <div class="column side">
+      <div class="piechart" id="analysis1"></div>
+      <div class="piechart" id="analysis2"></div>
+      <div class="piechart" id="analysis3"></div>
+      <div class="piechart" id="analysis4"></div>
+    </div>
+  </div>
+  </body>
+</html>
