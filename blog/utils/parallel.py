@@ -11,18 +11,21 @@ def fun_call1():
     print('Client 1 call')
     data_1 = Server1()
     print(type(data_1))
+    return data_1
 
 
 def fun_call2():
     print('Client 2 call')
     data_2 = Server2()
     print(type(data_2))
+    return data_2
 
 
 def fun_call3():
     print('Client 3 call')
     data_3 = Server3()
     print(type(data_3))
+    return data_3
 
 
 def Main():
@@ -35,7 +38,7 @@ def Main():
     p1.join()
     p2.join()
     p3.join()
-    manager = multiprocessing.Manager()
+    # manager = multiprocessing.Manager()
 
 
 if __name__ == '__main__':
