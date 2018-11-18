@@ -12,19 +12,22 @@ data_3
 def fun_call1():
     print('Client 1 call')
     global data_1
-    data_1: object = Server1()
+    data_1 = Server1()
+    print(type(data_1))
 
 
 def fun_call2():
     print('Client 2 call')
     global data_2
     data_2 = Server2()
+    print(type(data_2))
 
 
 def fun_call3():
     print('Client 3 call')
     global data_3
     data_3 = Server3()
+    print(type(data_3))
 
 
 def Main():

@@ -2,7 +2,7 @@ import sys
 from django.shortcuts import render
 from django.template import loader, Context
 from geopy.geocoders import GoogleV3
-# from ..utils.parallel import *
+from ..utils.parallel import *
 # from multiprocessing import Process
 # from ..utils.client1 import *
 # from ..utils.client2 import *
@@ -15,6 +15,9 @@ from geopy.geocoders import GoogleV3
 def index(request):
     template = loader.get_template('blog/index.html')
 
+    fun_call1()
+    fun_call2()
+    fun_call3()
     # data_1
     # data_2
     # data_3
