@@ -1,4 +1,5 @@
 import socket
+import ast
 
 
 def Server3():
@@ -14,6 +15,8 @@ def Server3():
     data = s.recv(1024).decode('utf-8')
     print(type(data))
     print('Received from Server ' + str(data[0]))
+    x = ast.literal_eval(data)
+    print(x)
     s.close()
     return data
 

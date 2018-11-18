@@ -1,5 +1,5 @@
 import socket
-
+import ast
 
 def Server1():
     host = '192.168.0.105'
@@ -14,8 +14,8 @@ def Server1():
     data = s.recv(1024).decode('utf-8')
     print(type(data))
     print('Received from Server ' + str(data))
-    li = list(data.split(","))
-    print(li)
+    x = ast.literal_eval(data)
+    print(x)
     s.close()
     return data
 
