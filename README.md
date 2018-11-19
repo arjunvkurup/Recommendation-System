@@ -1,5 +1,5 @@
 # Recommendation-System
-Recmmendation system using distributed database clustering in a distributed environmenet
+Recommendation system using distributed database clustering in a distributed environmenet
 
 ## Contains code used for recommendation system using distributed database clustering algorithm.
 
