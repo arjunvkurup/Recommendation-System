@@ -3,7 +3,7 @@ import ast
 
 
 def Server3():
-    host = '192.168.0.106'
+    host = '192.168.43.185'
     port = 5003
 
     s = socket.socket()

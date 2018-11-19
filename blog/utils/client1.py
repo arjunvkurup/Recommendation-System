@@ -2,7 +2,7 @@ import socket
 import ast
 
 def Server1():
-    host = '192.168.0.105'
+    host = '192.168.43.214'
     port = 5001
 
     s = socket.socket()
